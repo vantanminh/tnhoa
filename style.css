@@ -93,3 +93,19 @@ strong {
     margin-top: 20px;
     font-size: 0.9em;
 }
+
+/* --- MỚI THÊM: CSS cho mũi tên có điều kiện nhiệt độ --- */
+.reaction-arrow {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 8px;
+    line-height: 1;
+}
+
+.reaction-arrow .condition {
+    font-size: 0.65em;
+    margin-bottom: -4px; /* Kéo chữ t° xuống gần mũi tên */
+    font-family: Arial, sans-serif; /* Dùng font thường cho t° nhìn đẹp hơn font monospace */
+}

@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phiếu Thực Hành Hóa Học</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS bổ sung để làm đẹp phần Lịch sử thay đổi (bạn có thể chuyển vào file style.css) */
+        .changelog-details {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .changelog-details summary {
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+            color: #333;
+        }
+        .changelog-details summary:hover {
+            color: #0056b3;
+        }
+        .changelog-content {
+            margin-top: 10px;
+            padding-left: 20px;
+            font-size: 0.95em;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+        .changelog-content li {
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
 
@@ -102,6 +134,16 @@
             CaCO<sub>3</sub> + 2CH<sub>3</sub>COOH &rarr; (CH<sub>3</sub>COO)<sub>2</sub>Ca + CO<sub>2</sub>&uarr; + H<sub>2</sub>O
         </div>
     </div>
+
+    <!-- Mục Lịch sử thay đổi (Changelog) -->
+    <details class="changelog-details">
+        <summary>Lịch sử thay đổi</summary>
+        <ul class="changelog-content">
+            <li><strong>Cập nhật mới nhất:</strong> Đổi phương trình phản ứng tráng bạc ở <strong>TN3</strong>. Thay vì phản ứng tạo ra 2Ag, đã cập nhật thành phản ứng đặc trưng của HCHO (Methanal) tạo ra tỉ lệ 4Ag và muối (NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub>.</li>
+            <li><strong>Bản gốc:</strong> Tạo mới Phiếu Thực Hành Hóa Học với 4 thí nghiệm cơ bản (Ethanol, Glycerol, Tráng bạc, Acetic acid).</li>
+            <li>Thêm tính năng menu thu gọn (Lịch sử thay đổi) vào cuối trang.</li>
+        </ul>
+    </details>
 
 </div>
 

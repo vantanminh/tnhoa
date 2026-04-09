@@ -6,6 +6,99 @@
     <title>Phiếu Thực Hành Hóa Học</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* --- TROLL POPUP --- */
+        #troll-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInOverlay 0.3s ease;
+        }
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        #troll-popup {
+            background: #fff;
+            border-radius: 18px;
+            padding: 36px 32px 28px;
+            max-width: 360px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            animation: popIn 0.4s cubic-bezier(.175,.885,.32,1.275);
+            position: relative;
+            border: 3px solid #e74c3c;
+        }
+        @keyframes popIn {
+            0%   { transform: scale(0.5) rotate(-6deg); opacity: 0; }
+            70%  { transform: scale(1.05) rotate(1deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        #troll-popup .troll-icon {
+            font-size: 4em;
+            line-height: 1;
+            margin-bottom: 10px;
+            animation: wobble 1.2s infinite;
+        }
+        @keyframes wobble {
+            0%,100% { transform: rotate(-5deg); }
+            50%      { transform: rotate(5deg); }
+        }
+        #troll-popup .troll-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        #troll-popup h2 {
+            color: #c0392b;
+            font-size: 1.5em;
+            margin: 0 0 8px;
+            border: none;
+            padding: 0;
+        }
+        #troll-popup p {
+            color: #555;
+            font-size: 0.95em;
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+        #troll-popup p strong {
+            color: #e74c3c;
+        }
+        #troll-continue-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(231,76,60,0.4);
+            transition: transform 0.15s, box-shadow 0.15s;
+            letter-spacing: 0.5px;
+        }
+        #troll-continue-btn:hover {
+            transform: scale(1.06);
+            box-shadow: 0 6px 20px rgba(231,76,60,0.55);
+        }
+        #troll-popup .troll-footer {
+            margin-top: 14px;
+            font-size: 0.75em;
+            color: #bbb;
+        }
+
         /* CSS bổ sung để làm đẹp phần Lịch sử thay đổi (bạn có thể chuyển vào file style.css) */
         .changelog-details {
             background-color: #f9f9f9;
@@ -39,6 +132,24 @@
     </style>
 </head>
 <body>
+
+<!-- TROLL POPUP -->
+<div id="troll-overlay">
+    <div id="troll-popup">
+        <div class="troll-icon">🔒</div>
+        <div class="troll-badge">⚠️ Cảnh báo hệ thống</div>
+        <h2>Link đã bị khoá!</h2>
+        <p>
+            Trang này <strong>KHÔNG được phép truy cập</strong> do vi phạm
+            điều khoản sử dụng số <em>69.420</em>.<br><br>
+            Vui lòng liên hệ admin hoặc… <strong>cứ bấm nút bên dưới 😏</strong>
+        </p>
+        <button id="troll-continue-btn" onclick="document.getElementById('troll-overlay').style.display='none'">
+            🚀 Tiếp tục xem (bất hợp pháp)
+        </button>
+        <div class="troll-footer">Mã lỗi: ERR_LINK_COOKED_404_LOL</div>
+    </div>
+</div>
 
 <div class="container">
     <!-- Thực hành 1 -->

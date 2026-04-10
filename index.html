@@ -6,11 +6,11 @@
     <title>Phiếu Thực Hành Hóa Học</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- TROLL POPUP --- */
-        #troll-overlay {
+        /* --- INFO POPUP --- */
+        #info-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.75);
+            background: rgba(0,0,0,0.5);
             z-index: 9999;
             display: flex;
             align-items: center;
@@ -21,82 +21,56 @@
             from { opacity: 0; }
             to   { opacity: 1; }
         }
-        #troll-popup {
+        #info-popup {
             background: #fff;
-            border-radius: 18px;
-            padding: 36px 32px 28px;
+            border-radius: 16px;
+            padding: 32px 28px 24px;
             max-width: 360px;
             width: 90%;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            animation: popIn 0.4s cubic-bezier(.175,.885,.32,1.275);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+            animation: popIn 0.35s cubic-bezier(.175,.885,.32,1.275);
             position: relative;
-            border: 3px solid #e74c3c;
+            border: 2px solid #0056b3;
         }
         @keyframes popIn {
-            0%   { transform: scale(0.5) rotate(-6deg); opacity: 0; }
-            70%  { transform: scale(1.05) rotate(1deg); }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            0%   { transform: scale(0.75); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
-        #troll-popup .troll-icon {
-            font-size: 4em;
+        #info-popup .info-icon {
+            font-size: 3.2em;
             line-height: 1;
             margin-bottom: 10px;
-            animation: wobble 1.2s infinite;
         }
-        @keyframes wobble {
-            0%,100% { transform: rotate(-5deg); }
-            50%      { transform: rotate(5deg); }
-        }
-        #troll-popup .troll-badge {
-            display: inline-block;
-            background: #e74c3c;
-            color: #fff;
-            font-size: 0.7em;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 3px 10px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-        }
-        #troll-popup h2 {
-            color: #c0392b;
-            font-size: 1.5em;
-            margin: 0 0 8px;
+        #info-popup h2 {
+            color: #0056b3;
+            font-size: 1.3em;
+            margin: 0 0 10px;
             border: none;
             padding: 0;
         }
-        #troll-popup p {
+        #info-popup p {
             color: #555;
             font-size: 0.95em;
             margin: 0 0 20px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
-        #troll-popup p strong {
-            color: #e74c3c;
-        }
-        #troll-continue-btn {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        #info-close-btn {
+            background: linear-gradient(135deg, #0056b3, #003d82);
             color: #fff;
             border: none;
-            padding: 12px 28px;
+            padding: 11px 28px;
             border-radius: 30px;
             font-size: 1em;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(231,76,60,0.4);
+            box-shadow: 0 4px 14px rgba(0,86,179,0.35);
             transition: transform 0.15s, box-shadow 0.15s;
             letter-spacing: 0.5px;
         }
-        #troll-continue-btn:hover {
-            transform: scale(1.06);
-            box-shadow: 0 6px 20px rgba(231,76,60,0.55);
-        }
-        #troll-popup .troll-footer {
-            margin-top: 14px;
-            font-size: 0.75em;
-            color: #bbb;
+        #info-close-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,86,179,0.5);
         }
 
         /* CSS bổ sung để làm đẹp phần Lịch sử thay đổi (bạn có thể chuyển vào file style.css) */
@@ -133,21 +107,18 @@
 </head>
 <body>
 
-<!-- TROLL POPUP -->
-<div id="troll-overlay">
-    <div id="troll-popup">
-        <div class="troll-icon">🔒</div>
-        <div class="troll-badge">⚠️ Cảnh báo hệ thống</div>
-        <h2>Link đã bị khoá!</h2>
+<!-- INFO POPUP -->
+<div id="info-overlay">
+    <div id="info-popup">
+        <div class="info-icon">📋</div>
+        <h2>Chào mừng bạn!</h2>
         <p>
-            Trang này <strong>KHÔNG được phép truy cập</strong> do vi phạm
-            điều khoản sử dụng số <em>69.420</em>.<br><br>
-            Vui lòng liên hệ admin hoặc… <strong>cứ bấm nút bên dưới 😏</strong>
+            Nếu bạn phát hiện nội dung <strong>bị sai</strong> hoặc cần chỉnh sửa,
+            hãy <strong>kéo xuống cuối trang</strong> để xem thông tin liên lạc và báo cáo cho chúng mình nhé! 😊
         </p>
-        <button id="troll-continue-btn" onclick="document.getElementById('troll-overlay').style.display='none'">
-            🚀 Tiếp tục xem (bất hợp pháp)
+        <button id="info-close-btn" onclick="document.getElementById('info-overlay').style.display='none'">
+            ✅ Đã hiểu, tiếp tục xem
         </button>
-        <div class="troll-footer">Mã lỗi: ERR_LINK_COOKED_404_LOL</div>
     </div>
 </div>
 
@@ -255,6 +226,21 @@
             <li>Thêm tính năng menu thu gọn (Lịch sử thay đổi) vào cuối trang.</li>
         </ul>
     </details>
+
+    <!-- Chân trang / Liên hệ báo cáo -->
+    <footer class="site-footer">
+        <p>📢 Phát hiện nội dung bị sai? Hãy liên hệ để báo cáo:</p>
+        <p>
+            <a href="https://www.facebook.com/vtan.minh" target="_blank" rel="noopener">
+                📘 facebook.com/vtan.minh
+            </a>
+        </p>
+        <p>
+            <a href="mailto:vantanminh61@gmail.com">
+                ✉️ vantanminh61@gmail.com
+            </a>
+        </p>
+    </footer>
 
 </div>
 

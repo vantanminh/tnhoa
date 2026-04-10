@@ -109,3 +109,30 @@ strong {
     margin-bottom: -4px; /* Kéo chữ t° xuống gần mũi tên */
     font-family: Arial, sans-serif; /* Dùng font thường cho t° nhìn đẹp hơn font monospace */
 }
+
+/* --- Chân trang liên lạc --- */
+.site-footer {
+    text-align: center;
+    margin-top: 24px;
+    padding: 20px 16px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    font-size: 0.95em;
+    color: #555;
+}
+
+.site-footer p {
+    margin: 6px 0;
+}
+
+.site-footer a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
